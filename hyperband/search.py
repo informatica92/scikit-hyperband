@@ -330,8 +330,8 @@ class HyperbandSearchCV(BaseSearchCV):
         self.random_state = random_state
 
         super(HyperbandSearchCV, self).__init__(
-            estimator=estimator, scoring=scoring, n_jobs=n_jobs,
-            iid=iid, refit=refit, cv=cv, verbose=verbose,
+            estimator=estimator, scoring=scoring, #fit_params=None,
+            n_jobs=n_jobs, refit=refit, cv=cv, verbose=verbose,
             pre_dispatch=pre_dispatch, error_score=error_score,
             return_train_score=return_train_score)
 
@@ -341,6 +341,7 @@ class HyperbandSearchCV(BaseSearchCV):
         s_max = int(np.floor(np.log(self.max_iter / self.min_iter) / np.log(self.eta)))
         B = (s_max + 1) * self.max_iter
 
+        self.multimetric_ = False  # HO STATO IO
         refit_metric = self.refit if self.multimetric_ else 'score'
         random_state = check_random_state(self.random_state)
 
