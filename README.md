@@ -11,8 +11,8 @@ This fork is to make this project compatible with the latest version of scikit-l
 
 ### Changelog 
 #### 2021-02-01
-deleted: all references to the iid parameter because is has been removed in the latest version
-modified: self.multimetric_ = False forced status because is now missing in parent class
+- deleted: all references to the iid parameter because is has been removed in the latest version
+- modified: self.multimetric_ = False forced status because is now missing in parent class
 
 ## Installation
 
