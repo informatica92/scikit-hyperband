@@ -6,6 +6,14 @@
 
 A scikit-learn compatible implementation of hyperband.
 
+## Why this fork? 
+This fork is to make this project compatible with the latest version of scikit-learn (0.24.1).
+
+### Changelog 
+#### 2021-02-01
+deleted: all references to the iid parameter because is has been removed in the latest version
+modified: self.multimetric_ = False forced status because is now missing in parent class
+
 ## Installation
 
 Clone the git repository 
